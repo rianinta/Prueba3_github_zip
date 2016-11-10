@@ -38,6 +38,34 @@ $(function(){
 
     var ahora = new Date();
     geoXml.parse("http://riancarga.inta.gob.ar/WsEAR/ArmarKML.aspx?rnd=" + ahora.getTime() + "&IdProvincia=22&IdCampania=6&IdCultivo=6");
+
+    //**************************************************************************************************************************************************************
+    //Prueba LocalStorage
+    /*if(localStorage.ValorPrueba == undefined){
+        $("#txtValorStorage").text("-Sin valor-")
+    } else {
+        $("#txtValorStorage").text(localStorage.ValorPrueba)
+    }*/
+    if (localStorage.getItem("ValorPrueba") === null) {
+        $("#txtValorStorage").text("-Sin valor-")
+    }else{
+        $("#txtValorStorage").text(localStorage.ValorPrueba)
+    }
+
+    $("#cmdGuardar").click(function(){
+        /*localStorage.ValorPrueba = $("#IngresoValorStorage").val()
+        alert("@" + localStorage.ValorPrueba + "@")*/
+        localStorage.setItem('ValorPrueba', $("#IngresoValorStorage").val())
+        $("#txtValorStorage").text(localStorage.ValorPrueba)
+    });
+
+
+
+    $("#cmdBorrar").click(function(){
+        //localStorage.ValorPrueba = undefined
+        localStorage.removeItem('ValorPrueba')
+        $("#txtValorStorage").text("-Sin valor-")
+    });    
 });
 
 function CargoCultivosEnCombo(response){
