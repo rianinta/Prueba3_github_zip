@@ -28,6 +28,16 @@ $(function(){
     };
 
     map = new google.maps.Map(document.getElementById("map"), myOptions);
+
+    geoXml = new geoXML3.parser({
+        map: map,
+        singleInfoWindow: true,
+        zoom: false,
+        afterParse: useTheData
+    });
+
+    var ahora = new Date();
+    geoXml.parse("http://riancarga.inta.gob.ar/WsEAR/ArmarKML.aspx?rnd=" + ahora.getTime() + "&IdProvincia=22&IdCampania=6&IdCultivo=6");
 });
 
 function CargoCultivosEnCombo(response){
@@ -39,4 +49,8 @@ function CargoCultivosEnCombo(response){
     });
 
     $("#modificado").text(MuestroLalala)
+}
+
+function useTheData(doc) {
+    $("#modificado").text($("#modificado").text() + "|KML Cargado")
 }
