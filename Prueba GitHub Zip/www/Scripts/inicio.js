@@ -1,6 +1,4 @@
 $(function(){
-	alert("Hola! Ya cargué jQuery! :)")
-
 	$("#modificado").text("Este sería un texto que cambió")
 
 	$.ajax({
@@ -15,6 +13,21 @@ $(function(){
                 alert(response.d);
             }
         });
+
+    //*****************************************************************************************************
+    //Prueba armar mapa
+    var myOptions;
+    var map;
+    var geoXml;
+
+    myOptions = {
+        center: new google.maps.LatLng(-40, -64),
+        streetViewControl: false,
+        zoom: 4,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    map = new google.maps.Map(document.getElementById("map"), myOptions);
 });
 
 function CargoCultivosEnCombo(response){
@@ -25,5 +38,5 @@ function CargoCultivosEnCombo(response){
         MuestroLalala = MuestroLalala + "(" + Valores.IdCultivo + ") " + Valores.Cultivo + "|"
     });
 
-    alert(MuestroLalala)
+    $("#modificado").text(MuestroLalala)
 }
