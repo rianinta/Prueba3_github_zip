@@ -65,7 +65,29 @@ $(function(){
         //localStorage.ValorPrueba = undefined
         localStorage.removeItem('ValorPrueba')
         $("#txtValorStorage").text("-Sin valor-")
-    });    
+    });
+
+    document.addEventListener('deviceready', function(event) 
+    {
+        //************************************************************************************************************************************************************
+        //PLUGINS
+
+        //////////////////////////////////////////////////////////////////////////////////////////
+        //Fullscreen (sirve para cuadros de texto, para que no baje la barrita de arriba)
+        function successFullscreen()
+        {
+            console.log("It worked!");
+        }
+
+        function errorFullscreen(error)
+        {
+            console.log(error);
+        }
+
+        AndroidFullScreen.immersiveMode(successFullscreen, errorFullscreen);
+        alert("Fullscreen ok!")
+    });
+            
 });
 
 function CargoCultivosEnCombo(response){
