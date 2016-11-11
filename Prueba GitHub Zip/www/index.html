@@ -28,13 +28,13 @@
     
     <body>
     
-        <!--<h1>Android 4.0+</h1>
+        <h1>Android 4.0+</h1>
 		<button id="leanModeButton">Lean Mode</button>
 		<button id="showUiButton">Show UI</button>
 		
         <h1>Android 4.4+</h1>
 		<button id="immersiveModeButton">Immersive Mode</button>
-		<button id="showUnderUiButton">Show Under UI</button> -->
+		<button id="showUnderUiButton">Show Under UI</button>
 
         <input type="text" name="fname" id="textoEntrada"><br>
         <button id="cmdPrueba" onclick="alert('Saraaasa')">Click</button>
@@ -46,7 +46,7 @@
         
             document.addEventListener('deviceready', function(event) 
             {
-            	/*var leanModeButton = document.getElementById('leanModeButton'),
+            	var leanModeButton = document.getElementById('leanModeButton'),
 					immersiveModeButton = document.getElementById('immersiveModeButton'),
             		showUnderUiButton = document.getElementById('showUnderUiButton'),
             		showUiButton = document.getElementById('showUiButton');
@@ -68,24 +68,27 @@
             	
             	leanModeButton.addEventListener('click', function(event)
             	{
-            		AndroidFullScreen.leanMode(successFunction, errorFunction);
+            	   AndroidFullScreen.leanMode(successFunction, errorFunction);
+                   alert("Lean mode seteado!")
             	});
             	
             	immersiveModeButton.addEventListener('click', function(event)
-            	{*/
-            	AndroidFullScreen.immersiveMode(successFunction, errorFunction);
-                alert("Listo seteado!")
-            	/*});
+            	{
+            	   AndroidFullScreen.immersiveMode(successFunction, errorFunction);
+                   alert("Immersive mode seteado!")
+            	});
             	
             	showUnderUiButton.addEventListener('click', function(event)
              	{
              		AndroidFullScreen.showUnderSystemUI(successFunction, errorFunction);
+                    alert("UnderUI mode seteado!")
              	});
             	
             	showUiButton.addEventListener('click', function(event)
              	{
              		AndroidFullScreen.showSystemUI(successFunction, errorFunction);
-             	});*/
+                    alert("Show UI mode seteado!")
+             	});
             	
             });
             
