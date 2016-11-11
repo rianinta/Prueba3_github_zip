@@ -28,13 +28,17 @@
     
     <body>
     
-        <h1>Android 4.0+</h1>
+        <!--<h1>Android 4.0+</h1>
 		<button id="leanModeButton">Lean Mode</button>
 		<button id="showUiButton">Show UI</button>
 		
         <h1>Android 4.4+</h1>
 		<button id="immersiveModeButton">Immersive Mode</button>
-		<button id="showUnderUiButton">Show Under UI</button>
+		<button id="showUnderUiButton">Show Under UI</button> -->
+
+        <input type="text" name="fname" id="textoEntrada"><br>
+        <button id="cmdPrueba" onclick="alert('Saraaasa')">Click</button>
+
         
         <script type="text/javascript" src="cordova.js"></script>
         
@@ -42,7 +46,7 @@
         
             document.addEventListener('deviceready', function(event) 
             {
-            	var leanModeButton = document.getElementById('leanModeButton'),
+            	/*var leanModeButton = document.getElementById('leanModeButton'),
 					immersiveModeButton = document.getElementById('immersiveModeButton'),
             		showUnderUiButton = document.getElementById('showUnderUiButton'),
             		showUiButton = document.getElementById('showUiButton');
@@ -68,9 +72,10 @@
             	});
             	
             	immersiveModeButton.addEventListener('click', function(event)
-            	{
-            		AndroidFullScreen.immersiveMode(successFunction, errorFunction);
-            	});
+            	{*/
+            	AndroidFullScreen.immersiveMode(successFunction, errorFunction);
+                alert("Listo seteado!")
+            	/*});
             	
             	showUnderUiButton.addEventListener('click', function(event)
              	{
@@ -80,7 +85,7 @@
             	showUiButton.addEventListener('click', function(event)
              	{
              		AndroidFullScreen.showSystemUI(successFunction, errorFunction);
-             	});
+             	});*/
             	
             });
             
