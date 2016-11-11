@@ -46,10 +46,10 @@
         
             document.addEventListener('deviceready', function(event) 
             {
-            	var leanModeButton = document.getElementById('leanModeButton'),
+            	/*var leanModeButton = document.getElementById('leanModeButton'),
 					immersiveModeButton = document.getElementById('immersiveModeButton'),
             		showUnderUiButton = document.getElementById('showUnderUiButton'),
-            		showUiButton = document.getElementById('showUiButton');
+            		showUiButton = document.getElementById('showUiButton');*/
             	
             	function successFunction()
             	{
@@ -66,17 +66,17 @@
             	    console.log(value);
             	}
             	
-            	leanModeButton.addEventListener('click', function(event)
+            	/*leanModeButton.addEventListener('click', function(event)
             	{
             	   AndroidFullScreen.leanMode(successFunction, errorFunction);
                    alert("Lean mode seteado!")
             	});
             	
             	immersiveModeButton.addEventListener('click', function(event)
-            	{
+            	{*/
             	   AndroidFullScreen.immersiveMode(successFunction, errorFunction);
                    alert("Immersive mode seteado!")
-            	});
+            	/*});
             	
             	showUnderUiButton.addEventListener('click', function(event)
              	{
@@ -88,7 +88,7 @@
              	{
              		AndroidFullScreen.showSystemUI(successFunction, errorFunction);
                     alert("Show UI mode seteado!")
-             	});
+             	});*/
             	
             });
             
