@@ -10,15 +10,24 @@
 	<preference name="fullscreen" value="true"/>
 	<preference name="webviewbounce" value="false"/>
 	<preference name="exit-on-suspend" value="false"/>
+	
+	<!-- OneSignal -->
+	<preference name="phonegap-version" value="cli-5.4.1" />
+	<preference name="android-build-tool" value="gradle" />
+	
 	<icon src="icon.png"/>
 	<content src="index.html"/>
 	<access origin="*" onlyInBrowser="true"/>
 	<!-- Added the following intents to support the removal of whitelist code from base cordova to a plugin -->
 	<!-- Whitelist configuration. Refer to https://cordova.apache.org/docs/en/edge/guide_appdev_whitelist_index.md.html -->
-	
 	<plugin name="cordova-plugin-fullscreen" source="npm"/>
-	
 	<plugin name="cordova-plugin-whitelist" version="1"/>
+
+	<!-- OneSignal -->
+	<gap:plugin name="onesignal-cordova-plugin" spec="^2.0.6" source="npm" />
+
+
+
 	<allow-intent href="http://*/*"/>
 	<allow-intent href="https://*/*"/>
 	<allow-intent href="tel:*"/>

@@ -37,15 +37,11 @@ $(function(){
     });
 
     var ahora = new Date();
+    //geoXml.parse("armarMapa.aspx?rnd=" + ahora.getTime() + "&IdRegion=99&IdPrograma=64");
     geoXml.parse("http://riancarga.inta.gob.ar/WsEAR/ArmarKML.aspx?rnd=" + ahora.getTime() + "&IdProvincia=22&IdCampania=6&IdCultivo=6");
 
     //**************************************************************************************************************************************************************
     //Prueba LocalStorage
-    /*if(localStorage.ValorPrueba == undefined){
-        $("#txtValorStorage").text("-Sin valor-")
-    } else {
-        $("#txtValorStorage").text(localStorage.ValorPrueba)
-    }*/
     if (localStorage.getItem("ValorPrueba") === null) {
         $("#txtValorStorage").text("-Sin valor-")
     }else{
@@ -53,8 +49,6 @@ $(function(){
     }
 
     $("#cmdGuardar").click(function(){
-        /*localStorage.ValorPrueba = $("#IngresoValorStorage").val()
-        alert("@" + localStorage.ValorPrueba + "@")*/
         localStorage.setItem('ValorPrueba', $("#IngresoValorStorage").val())
         $("#txtValorStorage").text(localStorage.ValorPrueba)
     });
@@ -62,7 +56,6 @@ $(function(){
 
 
     $("#cmdBorrar").click(function(){
-        //localStorage.ValorPrueba = undefined
         localStorage.removeItem('ValorPrueba')
         $("#txtValorStorage").text("-Sin valor-")
     });
@@ -85,9 +78,26 @@ $(function(){
         }
 
         AndroidFullScreen.immersiveMode(successFullscreen, errorFullscreen);
-        alert("Fullscreen ok!")
-    });
-            
+
+        //////////////////////////////////////////////////////////////////////////////////////////
+        //Notificaciones (Servicio OneSignal)
+        var notificationOpenedCallback = function(jsonData) {
+            //console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+            alert("Llegó una notificación!")
+        };
+
+        window.plugins.OneSignal
+            .startInit("c932de39-2b5b-4eb2-be1f-3e09b8ca5574", "173202508128")
+            .handleNotificationOpened(notificationOpenedCallback)
+            .endInit();
+        });
+
+        window.plugins.OneSignal.setSubscription(true);
+        window.plugins.OneSignal.enableNotificationWhenActive(true);
+
+
+
+        alert("Si pasó por acá es un milagro (?)")
 });
 
 function CargoCultivosEnCombo(response){
