@@ -94,10 +94,6 @@ $(function(){
 
         window.plugins.OneSignal.setSubscription(true);
         window.plugins.OneSignal.enableNotificationWhenActive(true);
-
-
-
-        alert("Si pasó por acá es un milagro (?)")
 });
 
 function CargoCultivosEnCombo(response){
