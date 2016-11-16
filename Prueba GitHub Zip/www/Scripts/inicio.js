@@ -1,3 +1,7 @@
+var myOptions;
+var map;
+var geoXml;
+
 $(function(){
 	$("#modificado").text("Este sería un texto que cambió")
 
@@ -16,10 +20,6 @@ $(function(){
 
     //*****************************************************************************************************
     //Prueba armar mapa
-    var myOptions;
-    var map;
-    var geoXml;
-
     myOptions = {
         center: new google.maps.LatLng(-40, -64),
         streetViewControl: false,
