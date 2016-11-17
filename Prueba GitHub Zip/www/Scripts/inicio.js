@@ -53,8 +53,6 @@ $(function(){
         $("#txtValorStorage").text(localStorage.ValorPrueba)
     });
 
-
-
     $("#cmdBorrar").click(function(){
         localStorage.removeItem('ValorPrueba')
         $("#txtValorStorage").text("-Sin valor-")
@@ -78,6 +76,7 @@ $(function(){
         }
 
         AndroidFullScreen.immersiveMode(successFullscreen, errorFullscreen);
+        //////////////////////////////////////////////////////////////////////////////////////////
 
         //////////////////////////////////////////////////////////////////////////////////////////
         //Notificaciones (Servicio OneSignal)
@@ -94,6 +93,7 @@ $(function(){
 
         window.plugins.OneSignal.setSubscription(true);
         window.plugins.OneSignal.enableNotificationWhenActive(true);
+        //////////////////////////////////////////////////////////////////////////////////////////
 });
 
 function CargoCultivosEnCombo(response){
