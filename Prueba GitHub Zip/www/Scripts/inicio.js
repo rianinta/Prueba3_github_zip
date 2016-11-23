@@ -62,11 +62,14 @@ $(function(){
     //Prueba File-Transfer
 
     $("#cmdBajarLogo").click(function(){
-        alert("Bajando logo 2!!")
+        alert("Bajando mapita!!!")
 
         var fileTransfer = new FileTransfer();
-        var uri = encodeURI("http://rian.inta.gob.ar/Imagenes/LogoRIAN.jpg");
-        var fileURL =  "///storage/emulated/0/DCIM/logoDescargado.jpg";
+
+        var ahora = new Date();
+
+        var uri = encodeURI("http://riancarga.inta.gob.ar/WsEAR/ArmarKML.aspx?rnd=" + ahora.getTime() + "&IdProvincia=22&IdCampania=6&IdCultivo=6");
+        var fileURL =  "///storage/emulated/0/DCIM/unMapita.kml";
 
         fileTransfer.download(
             uri, fileURL, function(entry) {
