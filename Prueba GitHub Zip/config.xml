@@ -7,6 +7,11 @@
 	<author email="ramos.lucas@inta.gob.ar" href="http://rian.inta.gob.ar">
         RIAN Sistemas - EEA Anguil
     </author>
+    
+	<content src="index.html"/>
+	<access origin="*" onlyInBrowser="true"/>
+	<icon src="icon.png"/>
+	
 	<preference name="fullscreen" value="true"/>
 	<preference name="webviewbounce" value="false"/>
 	<preference name="DisallowOverscroll" value="true"/>
@@ -14,18 +19,9 @@
 	<preference name="loadUrlTimeoutValue" value="700000"/>
 	
 	<!-- OneSignal -->
-	<preference name="phonegap-version" value="cli-5.2.0" />
+	<preference name="phonegap-version" value="cli-5.4.1" />
 	<preference name="android-build-tool" value="gradle"/>
 		
-	<!-- Guardar archivos en dispositivo -->
-	<preference name="android-minSdkVersion" value="7" />
-	<preference name="android-targetSdkVersion" value="19" />
-	<preference name="AndroidPersistentFileLocation" value="Compatibility" />
-
-	<icon src="icon.png"/>
-	<content src="index.html"/>
-	<access origin="*" onlyInBrowser="true"/>
-
 	<!-- Added the following intents to support the removal of whitelist code from base cordova to a plugin -->
 	<!-- Whitelist configuration. Refer to https://cordova.apache.org/docs/en/edge/guide_appdev_whitelist_index.md.html -->
 	<plugin name="cordova-plugin-fullscreen" source="npm"/>
@@ -33,10 +29,6 @@
 
 	<!-- OneSignal -->
 	<gap:plugin name="onesignal-cordova-plugin" spec="^2.0.6" source="npm"/>
-	
-	<!-- Guardar archivos en dispositivo -->
-	<gap:plugin name="org.apache.cordova.file"/>
-	<gap:plugin name="org.apache.cordova.file-transfer"/>
 	
 	<allow-intent href="http://*/*"/>
 	<allow-intent href="https://*/*"/>
