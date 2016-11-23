@@ -29,9 +29,6 @@
 
 	<!-- OneSignal -->
 	<gap:plugin name="onesignal-cordova-plugin" spec="^2.0.6" source="npm"/>
-	
-	<!-- File Transfer -->
-	<plugin name="cordova-plugin-file-transfer" source="npm"/>
 			
 	<allow-intent href="http://*/*"/>
 	<allow-intent href="https://*/*"/>
