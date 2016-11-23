@@ -68,7 +68,7 @@ $(function(){
 
         var ahora = new Date();
 
-        var uri = encodeURI("http://riancarga.inta.gob.ar/WsEAR/ArmarKML.aspx?rnd=" + ahora.getTime() + "&IdProvincia=22&IdCampania=6&IdCultivo=6");
+        var uri = encodeURI("http://riancarga.inta.gob.ar/WsEAR/ArmarKML.aspx?rnd=" + ahora.getTime() + "&IdProvincia=42&IdCampania=6&IdCultivo=6");
         var fileURL =  "///storage/emulated/0/DCIM/unMapita.kml";
 
         fileTransfer.download(
@@ -89,6 +89,38 @@ $(function(){
             }
         );
     });    
+
+    //**************************************************************************************************************************************************************
+    //Cambio un mapa por el otro descargado
+    $("#cmdCambiarMapa").click(function(){
+        alert("Limpio el mapa")
+        //------------------------------------------------------------------
+        //Primero limpio el mapa
+        if (geoXml.docs.length > 1) {
+            for (var k = 0; k < geoXml.docs.length - 1; k++) {
+                geoXml.docs.shift();
+            }
+        }
+
+        if (geoXml.docs[0].gpolygons[0]) {
+            geoXml.docs[0].gpolygons[0].infoWindow.close();
+        }
+        for (var i = geoXml.docs[0].gpolygons.length; i > 0; i--) {
+            geoXml.docs[0].gpolygons[i - 1].setMap(null);
+            geoXml.docs[0].gpolygons.pop();
+        }
+        for (var k = geoXml.docs[0].gpolylines.length; k > 0; k--) {
+            geoXml.docs[0].gpolylines[k - 1].setMap(null);
+            geoXml.docs[0].gpolylines.pop();
+        }
+
+        //------------------------------------------------------------------
+        //Cargo el nuevo mapa
+        alert("Cargo el nuevo mapa! :B :B :B")
+        geoXml.parse("///storage/emulated/0/DCIM/unMapita.kml");
+    });
+
+    //**************************************************************************************************************************************************************
 
     document.addEventListener('deviceready', function(event) 
     {
