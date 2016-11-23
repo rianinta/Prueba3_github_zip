@@ -16,6 +16,12 @@
 	<!-- OneSignal -->
 	<preference name="phonegap-version" value="cli-5.2.0" />
 	<preference name="android-build-tool" value="gradle"/>
+		
+	<!-- Guardar archivos en dispositivo -->
+	<preference name="android-minSdkVersion" value="7" />
+	<preference name="android-targetSdkVersion" value="19" />
+	<preference name="AndroidPersistentFileLocation" value="Compatibility" />
+
 	<icon src="icon.png"/>
 	<content src="index.html"/>
 	<access origin="*" onlyInBrowser="true"/>
@@ -31,7 +37,6 @@
 	<!-- Guardar archivos en dispositivo -->
 	<gap:plugin name="org.apache.cordova.file"/>
 	<gap:plugin name="org.apache.cordova.file-transfer"/>
-	<preference name="AndroidPersistentFileLocation" value="Compatibility" />
 	
 	<allow-intent href="http://*/*"/>
 	<allow-intent href="https://*/*"/>
