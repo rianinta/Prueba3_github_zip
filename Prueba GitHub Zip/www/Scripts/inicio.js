@@ -62,14 +62,14 @@ $(function(){
     //Prueba File-Transfer
 
     $("#cmdBajarLogo").click(function(){
-        alert("Bajando mapita!!!")
+        alert("Bajando mapita (aunque seguro da error [o no])!!!")
 
         var fileTransfer = new FileTransfer();
 
         var ahora = new Date();
 
         var uri = encodeURI("http://riancarga.inta.gob.ar/WsEAR/ArmarKML.aspx?rnd=" + ahora.getTime() + "&IdProvincia=42&IdCampania=6&IdCultivo=6");
-        var fileURL =  "///storage/emulated/0/DCIM/unMapita.kml";
+        var fileURL =  "///storage/emulated/0/DCIM/RIAN/ISSA/unMapita.kml";
 
         fileTransfer.download(
             uri, fileURL, function(entry) {
@@ -117,7 +117,7 @@ $(function(){
         //------------------------------------------------------------------
         //Cargo el nuevo mapa
         alert("Cargo el nuevo mapa! :B :B :B")
-        geoXml.parse("///storage/emulated/0/DCIM/unMapita.kml");
+        geoXml.parse("///storage/emulated/0/DCIM/RIAN/ISSA/unMapita.kml");
     });
 
     //**************************************************************************************************************************************************************
