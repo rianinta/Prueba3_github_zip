@@ -62,11 +62,11 @@ $(function(){
     //Prueba File-Transfer
 
     $("#cmdBajarLogo").click(function(){
-        alert("Bajando logo!!")
+        alert("Bajando logo 2!!")
 
         var fileTransfer = new FileTransfer();
         var uri = encodeURI("http://rian.inta.gob.ar/Imagenes/LogoRIAN.jpg");
-        var fileURL =  "///storage/emulated/0/DCIM/myFile";
+        var fileURL =  "///storage/emulated/0/DCIM/logoDescargado.jpg";
 
         fileTransfer.download(
             uri, fileURL, function(entry) {
