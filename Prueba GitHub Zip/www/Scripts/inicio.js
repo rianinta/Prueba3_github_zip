@@ -58,6 +58,35 @@ $(function(){
         $("#txtValorStorage").text("-Sin valor-")
     });
 
+    //**************************************************************************************************************************************************************
+    //Prueba File-Transfer
+
+    $("#cmdBajarLogo").click(function(){
+        alert("Bajando logo!!")
+
+        var fileTransfer = new FileTransfer();
+        var uri = encodeURI("http://rian.inta.gob.ar/Imagenes/LogoRIAN.jpg");
+        var fileURL =  "///storage/emulated/0/DCIM/myFile";
+
+        fileTransfer.download(
+            uri, fileURL, function(entry) {
+                alert("Bajo!: " + entry.toURL());
+            },
+            
+            function(error) {
+                alert("download error source " + error.source);
+                alert("download error target " + error.target);
+                alert("download error code" + error.code);
+            },
+            
+            false, {
+                headers: {
+                    "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+                }
+            }
+        );
+    });    
+
     document.addEventListener('deviceready', function(event) 
     {
         //************************************************************************************************************************************************************
@@ -94,6 +123,7 @@ $(function(){
         window.plugins.OneSignal.setSubscription(true);
         window.plugins.OneSignal.enableNotificationWhenActive(true);
         //////////////////////////////////////////////////////////////////////////////////////////
+
 });
 
 function CargoCultivosEnCombo(response){
