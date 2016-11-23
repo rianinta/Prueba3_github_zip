@@ -19,7 +19,6 @@
 	<preference name="loadUrlTimeoutValue" value="700000"/>
 	
 	<!-- OneSignal -->
-	<preference name="phonegap-version" value="cli-5.4.1" />
 	<preference name="android-build-tool" value="gradle"/>
 		
 	<!-- Added the following intents to support the removal of whitelist code from base cordova to a plugin -->
@@ -30,6 +29,14 @@
 	<!-- OneSignal -->
 	<gap:plugin name="onesignal-cordova-plugin" spec="^2.0.6" source="npm"/>
 	
+	<gap:plugin name="org.apache.cordova.file"/>
+	<gap:plugin name="org.apache.cordova.file-transfer"/>
+	
+	<preference name="phonegap-version" value="cli-5.2.0" />
+	<preference name="android-minSdkVersion" value="7" />
+	<preference name="android-targetSdkVersion" value="19" />
+	<preference name="AndroidPersistentFileLocation" value="Compatibility" />
+		
 	<allow-intent href="http://*/*"/>
 	<allow-intent href="https://*/*"/>
 	<allow-intent href="tel:*"/>
