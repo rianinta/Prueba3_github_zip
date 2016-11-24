@@ -28,7 +28,7 @@
 	<!-- File Transfer -->
 	<plugin name="cordova-plugin-file-transfer" source="npm"/>
 	<!-- SQLite -->
-	<plugin spec="https://github.com/litehelpers/Cordova-sqlite-storage.git" source="git" />
+	<plugin spec="https://www.npmjs.com/package/cordova-sqlite-storage" source="npm" />
 	<allow-intent href="http://*/*"/>
 	<allow-intent href="https://*/*"/>
 	<allow-intent href="tel:*"/>
