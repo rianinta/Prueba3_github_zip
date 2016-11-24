@@ -28,7 +28,7 @@
 	<!-- File Transfer -->
 	<plugin name="cordova-plugin-file-transfer" source="npm"/>
 	<!-- SQLite -->
-	<plugin name="com.brodysoft.sqliteplugin" spec="1.0.6" source="pgb" />
+	<plugin name="cordova-sqlite-storage" spec="~0.8.5" />
 	<allow-intent href="http://*/*"/>
 	<allow-intent href="https://*/*"/>
 	<allow-intent href="tel:*"/>
