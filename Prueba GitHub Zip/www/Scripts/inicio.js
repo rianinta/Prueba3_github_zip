@@ -159,6 +159,19 @@ $(function(){
         window.plugins.OneSignal.enableNotificationWhenActive(true);
         //////////////////////////////////////////////////////////////////////////////////////////
 
+        //////////////////////////////////////////////////////////////////////////////////////////
+        //SQLite
+        alert("Ahora probamos a ver si funcó la instalación de SQLite :B")
+        window.sqlitePlugin.echoTest(function() {
+            alert('ECHO test OK');
+        });
+
+        window.sqlitePlugin.selfTest(function() {
+            alert('SELF test OK');
+        });
+
+        //////////////////////////////////////////////////////////////////////////////////////////
+
 });
 
 function CargoCultivosEnCombo(response){
