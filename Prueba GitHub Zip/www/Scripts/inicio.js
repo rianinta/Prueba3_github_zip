@@ -135,6 +135,15 @@ $(function(){
         //PLUGINS
 
         //////////////////////////////////////////////////////////////////////////////////////////
+        //SQLite
+        /*alert("Ahora probamos a ver si funcó la instalación de SQLite :B")
+        alert("Uh, te borré las pruebas, esto seguro funca")*/
+        $("#testDR").text("Te cargo en deviceready")
+        xTestDR = "Soy un valor modificado"
+
+        ////////////////////////////////////////////////////////////////////////////////////////// 
+
+        //////////////////////////////////////////////////////////////////////////////////////////
         //Fullscreen (sirve para cuadros de texto, para que no baje la barrita de arriba)
         function successFullscreen()
         {
@@ -163,16 +172,7 @@ $(function(){
         
         window.plugins.OneSignal.setSubscription(true);
         window.plugins.OneSignal.enableNotificationWhenActive(true);
-        //////////////////////////////////////////////////////////////////////////////////////////
-
-        //////////////////////////////////////////////////////////////////////////////////////////
-        //SQLite
-        /*alert("Ahora probamos a ver si funcó la instalación de SQLite :B")
-        alert("Uh, te borré las pruebas, esto seguro funca")*/
-        $("#testDR").text("Te cargo en deviceready")
-        xTestDR = "Soy un valor modificado"
-
-        //////////////////////////////////////////////////////////////////////////////////////////  
+        //////////////////////////////////////////////////////////////////////////////////////////         
     });
 });
 
