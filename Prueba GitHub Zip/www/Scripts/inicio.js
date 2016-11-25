@@ -162,13 +162,7 @@ $(function(){
         //////////////////////////////////////////////////////////////////////////////////////////
         //SQLite
         alert("Ahora probamos a ver si funcó la instalación de SQLite :B")
-        window.sqlitePlugin.echoTest(function() {
-            alert('ECHO test OK');
-        });
-
-        window.sqlitePlugin.selfTest(function() {
-            alert('SELF test OK');
-        });
+        alert("Uh, te borré las pruebas, esto seguro funca")
 
         //////////////////////////////////////////////////////////////////////////////////////////
 
