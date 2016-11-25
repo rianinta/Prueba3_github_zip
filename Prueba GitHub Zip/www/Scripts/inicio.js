@@ -126,13 +126,13 @@ $(function(){
     //Test SQLite
     $("#cmdInsertarDatos").click(function(){
         if(db === null){
-            alert("Db es un valor nulo")
+            alert("La base no está creada, la creo!")
+            db = window.sqlitePlugin.openDatabase({name: 'demo.db', location: 'default'});
+            alert("Base creada!")
         }else{
-            alert("Db: " + db)
+            alert("La base ya fue creada anteriormente")
         }
-        /*
-        db = window.sqlitePlugin.openDatabase({name: 'demo.db', location: 'default'});
-
+        
         alert("Ahora agregamos un registro...ponele...")
 
         db.transaction(function(tx) {
@@ -145,10 +145,18 @@ $(function(){
             alert('Populated database OK');
         });
 
-        alert("Registro agregado...ponele...")*/
+        alert("Registro agregado...ponele...")
     });
 
     $("#cmdMostrarDatos").click(function(){
+        if(db === null){
+            alert("La base no está creada, la creo!")
+            db = window.sqlitePlugin.openDatabase({name: 'demo.db', location: 'default'});
+            alert("Base creada!")
+        }else{
+            alert("La base ya fue creada anteriormente")
+        }
+        
         alert("Ahora muestro los datos... también ponele...")
 
         db.transaction(function(tx) {
