@@ -124,6 +124,7 @@ $(function(){
 
     //**************************************************************************************************************************************************************
     //Test SQLite
+    alert("A ver si pudo instalar la versión Cordova-sqlite-evcore-extbuild-free??")
     /*$("#cmdInsertarDatos").click(function(){
         alert("Insertando registro SQLite :B")
         db.transaction(function(tx) {
@@ -150,7 +151,9 @@ $(function(){
         alert("¿Pasó por acá? (MUESTRO DATOS)")
     });*/
 
-    $("#createTable").click(function(){
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /*$("#createTable").click(function(){
         myDB.transaction(function(transaction) {
         transaction.executeSql('CREATE TABLE IF NOT EXISTS phonegap_pro (id integer primary key, title text, desc text)', [],
             function(tx, result) {
@@ -191,7 +194,7 @@ $(function(){
            }
         }, null);
       });
-    });
+    });*/
 
 
     document.addEventListener('deviceready', function(event) 
