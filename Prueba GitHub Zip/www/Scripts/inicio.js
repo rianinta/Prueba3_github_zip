@@ -2,7 +2,7 @@ var myOptions;
 var map;
 var geoXml;
 
-var xTestDR = "valor inicial var";
+var db = null;
 
 $(function(){
 	$("#modificado").text("Este sería un texto que cambió")
@@ -123,25 +123,35 @@ $(function(){
     });
 
     //**************************************************************************************************************************************************************
-    //Test DR
-    $("#cmdTestDR").click(function(){
-        $("#testDR").text(xTestDR)
+    //Test SQLite
+    $("#cmdInsertarDatos").click(function(){
+        alert("Insertando registro SQLite :B")
+        db.transaction(function(tx) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS DemoTable (name, score)');
+            tx.executeSql('INSERT INTO DemoTable VALUES (?,?)', ['Alice', 101]);
+            tx.executeSql('INSERT INTO DemoTable VALUES (?,?)', ['Betty', 202]);
+        }, function(error) {
+            alert('Transaction ERROR: ' + error.message);
+        }, function() {
+            alert('Populated database OK');
+        });
     });
 
+    $("#cmdMostrarDatos").click(function(){
+        alert("Muestro los datos!")
+        db.transaction(function(tx) {
+            tx.executeSql('SELECT count(*) AS mycount FROM DemoTable', [], function(tx, rs) {
+                alert('Record count (expected to be 2): ' + rs.rows.item(0).mycount);
+            }, function(tx, error) {
+                alert('SELECT error: ' + error.message);
+            });
+        });
+    });
 
     document.addEventListener('deviceready', function(event) 
     {
         //**********************************************************************************************************************************************************
         //PLUGINS
-
-        //////////////////////////////////////////////////////////////////////////////////////////
-        //SQLite
-        /*alert("Ahora probamos a ver si funcó la instalación de SQLite :B")
-        alert("Uh, te borré las pruebas, esto seguro funca")*/
-        $("#testDR").text("Te cargo en deviceready")
-        xTestDR = "Soy un valor modificado"
-
-        ////////////////////////////////////////////////////////////////////////////////////////// 
 
         //////////////////////////////////////////////////////////////////////////////////////////
         //Fullscreen (sirve para cuadros de texto, para que no baje la barrita de arriba)
@@ -173,6 +183,12 @@ $(function(){
         window.plugins.OneSignal.setSubscription(true);
         window.plugins.OneSignal.enableNotificationWhenActive(true);
         //////////////////////////////////////////////////////////////////////////////////////////         
+
+        //////////////////////////////////////////////////////////////////////////////////////////
+        //SQLite
+        db = window.sqlitePlugin.openDatabase({name: 'BdPrueba.db', location: 'default'});
+
+        ////////////////////////////////////////////////////////////////////////////////////////// 
     });
 });
 
