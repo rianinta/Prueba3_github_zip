@@ -2,7 +2,7 @@ var myOptions;
 var map;
 var geoXml;
 
-var myDB;
+var db = null;
 
 $(function(){
 	$("#modificado").text("Este sería un texto que cambió")
@@ -124,23 +124,25 @@ $(function(){
 
     //**************************************************************************************************************************************************************
     //Test SQLite
-    alert("A ver si pudo instalar la versión Cordova-sqlite-evcore-extbuild-free??")
-    /*$("#cmdInsertarDatos").click(function(){
-        alert("Insertando registro SQLite :B")
+    $("#cmdInsertarDatos").click(function(){
+        alert("Ahora agregamos un registro...ponele...")
+
         db.transaction(function(tx) {
             tx.executeSql('CREATE TABLE IF NOT EXISTS DemoTable (name, score)');
             tx.executeSql('INSERT INTO DemoTable VALUES (?,?)', ['Alice', 101]);
             tx.executeSql('INSERT INTO DemoTable VALUES (?,?)', ['Betty', 202]);
         }, function(error) {
             alert('Transaction ERROR: ' + error.message);
-        }, function() {
+          }, function() {
             alert('Populated database OK');
         });
-        alert("¿Pasó por acá? (CARGA)")
+
+        alert("Registro agregado...ponele...")
     });
 
     $("#cmdMostrarDatos").click(function(){
-        alert("Muestro los datos!")
+        alert("Ahora muestro los datos... también ponele...")
+
         db.transaction(function(tx) {
             tx.executeSql('SELECT count(*) AS mycount FROM DemoTable', [], function(tx, rs) {
                 alert('Record count (expected to be 2): ' + rs.rows.item(0).mycount);
@@ -148,53 +150,9 @@ $(function(){
                 alert('SELECT error: ' + error.message);
             });
         });
-        alert("¿Pasó por acá? (MUESTRO DATOS)")
-    });*/
 
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    /*$("#createTable").click(function(){
-        myDB.transaction(function(transaction) {
-        transaction.executeSql('CREATE TABLE IF NOT EXISTS phonegap_pro (id integer primary key, title text, desc text)', [],
-            function(tx, result) {
-                alert("Table created successfully");
-            }, 
-            function(error) {
-                  alert("Error occurred while creating the table.");
-            });
-        });
+        alert("Mostró los datos! (ponele...)")
     });
-
-    //Insert New Data
-    $("#insert").click(function(){
-      var title=$("#title").val();
-      var desc=$("#desc").val();
-      console.log(title +""+ desc);
-      myDB.transaction(function(transaction) {
-            var executeQuery = "INSERT INTO phonegap_pro (title, desc) VALUES (?,?)";             
-            transaction.executeSql(executeQuery, [title,desc]
-                , function(tx, result) {
-                     alert('Inserted');
-                },
-                function(error){
-                     alert('Error occurred'); 
-                });
-        });
-    });
-
-    //Display Table Data
-    $("#showTable").click(function(){
-      $("#TableData").html("");
-      myDB.transaction(function(transaction) {
-      transaction.executeSql('SELECT * FROM phonegap_pro', [], function (tx, results) {
-           var len = results.rows.length, i;
-           $("#rowCount").html(len);
-           for (i = 0; i < len; i++){
-              $("#TableData").append("<tr><td>"+results.rows.item(i).id+"</td><td>"+results.rows.item(i).title+"</td><td>"+results.rows.item(i).desc+"</td><td><a href='edit.html?id="+results.rows.item(i).id+"&title="+results.rows.item(i).title+"&desc="+results.rows.item(i).desc+"'>Edit</a> &nbsp;&nbsp; <a class='delete' href='#' id='"+results.rows.item(i).id+"'>Delete</a></td></tr>");
-           }
-        }, null);
-      });
-    });*/
 
 
     document.addEventListener('deviceready', function(event) 
@@ -236,7 +194,7 @@ $(function(){
         //////////////////////////////////////////////////////////////////////////////////////////
         //SQLite
         //db = window.sqlitePlugin.openDatabase({name: 'BdPrueba.db', location: 'default'});
-        myDB = window.sqlitePlugin.openDatabase({name: "mySQLite.db", location: 'default'});
+        db = window.sqlitePlugin.openDatabase({name: 'demo.db', location: 'default'});
 
         ////////////////////////////////////////////////////////////////////////////////////////// 
     });
