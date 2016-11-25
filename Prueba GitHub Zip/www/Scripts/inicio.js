@@ -2,6 +2,8 @@ var myOptions;
 var map;
 var geoXml;
 
+var xTestDR = "valor inicial var";
+
 $(function(){
 	$("#modificado").text("Este sería un texto que cambió")
 
@@ -121,10 +123,15 @@ $(function(){
     });
 
     //**************************************************************************************************************************************************************
+    //Test DR
+    $("#cmdTestDR").click(function(){
+        $("#testDR").text(xTestDR)
+    });
+
 
     document.addEventListener('deviceready', function(event) 
     {
-        //************************************************************************************************************************************************************
+        //**********************************************************************************************************************************************************
         //PLUGINS
 
         //////////////////////////////////////////////////////////////////////////////////////////
@@ -161,8 +168,10 @@ $(function(){
 
         //////////////////////////////////////////////////////////////////////////////////////////
         //SQLite
-        alert("Ahora probamos a ver si funcó la instalación de SQLite :B")
-        alert("Uh, te borré las pruebas, esto seguro funca")
+        /*alert("Ahora probamos a ver si funcó la instalación de SQLite :B")
+        alert("Uh, te borré las pruebas, esto seguro funca")*/
+        $("#testDR").text("Te cargo en deviceready")
+        xTestDR = "Soy un valor modificado"
 
         //////////////////////////////////////////////////////////////////////////////////////////
 
