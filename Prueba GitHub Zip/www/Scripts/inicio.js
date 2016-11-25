@@ -174,7 +174,7 @@ $(function(){
         xTestDR = "Soy un valor modificado"
 
         //////////////////////////////////////////////////////////////////////////////////////////
-
+    });        
 });
 
 function CargoCultivosEnCombo(response){
