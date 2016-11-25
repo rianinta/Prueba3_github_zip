@@ -125,6 +125,14 @@ $(function(){
     //**************************************************************************************************************************************************************
     //Test SQLite
     $("#cmdInsertarDatos").click(function(){
+        if(db === null){
+            alert("Db es un valor nulo")
+        }else{
+            alert("Db: " + db)
+        }
+        /*
+        db = window.sqlitePlugin.openDatabase({name: 'demo.db', location: 'default'});
+
         alert("Ahora agregamos un registro...ponele...")
 
         db.transaction(function(tx) {
@@ -137,7 +145,7 @@ $(function(){
             alert('Populated database OK');
         });
 
-        alert("Registro agregado...ponele...")
+        alert("Registro agregado...ponele...")*/
     });
 
     $("#cmdMostrarDatos").click(function(){
@@ -199,10 +207,7 @@ $(function(){
         ////////////////////////////////////////////////////////////////////////////////////////// 
     });
 
-    //Creo el objeto DB al final del jquery.ready()
-    db = window.sqlitePlugin.openDatabase({name: 'demo.db', location: 'default'});
-
-    alert("Creé el objeto DB")
+    
 });
 
 function CargoCultivosEnCombo(response){
