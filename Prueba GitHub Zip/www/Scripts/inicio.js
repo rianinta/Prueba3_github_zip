@@ -135,6 +135,7 @@ $(function(){
         }, function() {
             alert('Populated database OK');
         });
+        alert("¿Pasó por acá? (CARGA)")
     });
 
     $("#cmdMostrarDatos").click(function(){
@@ -146,6 +147,7 @@ $(function(){
                 alert('SELECT error: ' + error.message);
             });
         });
+        alert("¿Pasó por acá? (MUESTRO DATOS)")
     });
 
     document.addEventListener('deviceready', function(event) 
