@@ -124,12 +124,6 @@ $(function(){
 
     //**************************************************************************************************************************************************************
     //Test SQLite
-    $("#cmdCrearObjetoDB").click(function(){
-        alert("Creo el objeto Db")
-        db = window.sqlitePlugin.openDatabase({name: 'demo.db', location: 'default'});
-        alert("¿Pasó?")
-    });
-
     $("#cmdInsertarDatos").click(function(){
         alert("Ahora agregamos un registro...ponele...")
 
@@ -204,6 +198,11 @@ $(function(){
 
         ////////////////////////////////////////////////////////////////////////////////////////// 
     });
+
+    //Creo el objeto DB al final del jquery.ready()
+    db = window.sqlitePlugin.openDatabase({name: 'demo.db', location: 'default'});
+
+    alert("Creé el objeto DB")
 });
 
 function CargoCultivosEnCombo(response){
