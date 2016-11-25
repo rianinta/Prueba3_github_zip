@@ -124,6 +124,12 @@ $(function(){
 
     //**************************************************************************************************************************************************************
     //Test SQLite
+    $("#cmdCrearObjetoDB").click(function(){
+        alert("Creo el objeto Db")
+        db = window.sqlitePlugin.openDatabase({name: 'demo.db', location: 'default'});
+        alert("¿Pasó?")
+    });
+
     $("#cmdInsertarDatos").click(function(){
         alert("Ahora agregamos un registro...ponele...")
 
@@ -194,7 +200,7 @@ $(function(){
         //////////////////////////////////////////////////////////////////////////////////////////
         //SQLite
         //db = window.sqlitePlugin.openDatabase({name: 'BdPrueba.db', location: 'default'});
-        db = window.sqlitePlugin.openDatabase({name: 'demo.db', location: 'default'});
+        
 
         ////////////////////////////////////////////////////////////////////////////////////////// 
     });
