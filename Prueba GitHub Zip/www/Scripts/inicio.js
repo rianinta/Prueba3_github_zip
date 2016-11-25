@@ -160,8 +160,7 @@ $(function(){
             .startInit("c932de39-2b5b-4eb2-be1f-3e09b8ca5574", "173202508128")
             .handleNotificationOpened(notificationOpenedCallback)
             .endInit();
-        });
-
+        
         window.plugins.OneSignal.setSubscription(true);
         window.plugins.OneSignal.enableNotificationWhenActive(true);
         //////////////////////////////////////////////////////////////////////////////////////////
@@ -173,8 +172,8 @@ $(function(){
         $("#testDR").text("Te cargo en deviceready")
         xTestDR = "Soy un valor modificado"
 
-        //////////////////////////////////////////////////////////////////////////////////////////
-    });        
+        //////////////////////////////////////////////////////////////////////////////////////////  
+    });
 });
 
 function CargoCultivosEnCombo(response){
