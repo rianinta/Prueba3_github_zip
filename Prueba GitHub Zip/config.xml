@@ -16,7 +16,7 @@
 	<preference name="exit-on-suspend" value="false"/>
 	<preference name="loadUrlTimeoutValue" value="700000"/>
 	<!-- OneSignal -->
-	<preference name="phonegap-version" value="cli-6.3.0"/>
+	<preference name="phonegap-version" value="cli-6.4.0"/>
 	<preference name="android-build-tool" value="gradle"/>
 	<!-- Added the following intents to support the removal of whitelist code from base cordova to a plugin -->
 	<!-- Whitelist configuration. Refer to https://cordova.apache.org/docs/en/edge/guide_appdev_whitelist_index.md.html -->
@@ -28,7 +28,7 @@
 	<!-- File Transfer -->
 	<plugin name="cordova-plugin-file-transfer" source="npm"/>
 	<!-- SQLite -->
-	<plugin spec="https://github.com/litehelpers/Cordova-sqlite-evcore-extbuild-free" source="git" />
+	<plugin spec="https://github.com/litehelpers/Cordova-sqlite-evcore-extbuild-free" source="git"/>
 	<allow-intent href="http://*/*"/>
 	<allow-intent href="https://*/*"/>
 	<allow-intent href="tel:*"/>
